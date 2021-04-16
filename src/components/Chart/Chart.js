@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchDailyData } from "../../api";
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import styles from "./Chart.module.css";
 
 function Chart() {
@@ -11,10 +11,10 @@ function Chart() {
       setDailyData(await fetchDailyData());
     };
 
-    // console.log(dailyData);
     fetchApi();
-  }, [dailyData]);
+  }, []);
 
+  console.log(dailyData);
   const lineChart = dailyData.length ? (
     <Line
       data={{
