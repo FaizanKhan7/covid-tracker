@@ -1,0 +1,12 @@
+body {
+  background-color: rgb(243, 247, 252);
+}
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
