@@ -20,7 +20,8 @@ function App() {
     const fetchingData = await fetchData();
 
     console.log(fetchingData);
-    setSelectedCountry(selectedCountry);
+    setData(fetchingData);
+    setSelectedCountry(fetchingData, selectedCountry);
     console.log(country);
   };
   return (
