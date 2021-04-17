@@ -39,10 +39,11 @@ function App() {
       <div className={styles.container}>
         <Cards data={data} />
         <CountryPicker
+          data={data}
           selectedCountry={selectedCountry}
           handleCountryChange={handleCountryChange}
         />
-        <Chart data={data} />
+        <Chart data={data} selectedCountry={selectedCountry} />
       </div>
     </>
   );
