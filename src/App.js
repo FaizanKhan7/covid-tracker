@@ -4,9 +4,11 @@ import { fetchData } from "./api";
 import { useEffect, useState } from "react";
 
 function App() {
+  console.log("hello");
   const [data, setData] = useState({});
   const [selectedCountry, setSelectedCountry] = useState("");
   useEffect(() => {
+    console.log("hello");
     async function fetchApi() {
       const fetchingData = await fetchData();
 
@@ -21,9 +23,13 @@ function App() {
 
     console.log(fetchingData);
     setData(fetchingData);
-    setSelectedCountry(fetchingData, selectedCountry);
+    setSelectedCountry(selectedCountry);
     console.log(country);
   };
+  if (Object.keys(data).length === 0) {
+    return <h1>loading...</h1>;
+  }
+  console.log("data", data);
   return (
     <>
       <div className={styles.title}>
@@ -36,7 +42,7 @@ function App() {
           selectedCountry={selectedCountry}
           handleCountryChange={handleCountryChange}
         />
-        <Chart />
+        <Chart data={data} />
       </div>
     </>
   );
